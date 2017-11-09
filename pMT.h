@@ -1,5 +1,16 @@
+/*
+pMT.h
+Easton Tuttle
+Computer Science II
+Homework 5 - Merkle Votes
+November 8, 2017
+
+Interfaces of the pMT class.
+*/
+
 #pragma once
 
+#include "stdafx.h"
 #include "bTREE.h"
 #include <string>
 using namespace std;

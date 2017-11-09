@@ -1,4 +1,15 @@
+/*
+bTREE.h
+Easton Tuttle
+Computer Science II
+Homework 5 - Merkle Votes
+November 8, 2017
+
+The interfaces for the binary tree.
+*/
 #pragma once
+
+#include "stdafx.h"
 #include <string>
 using namespace std;
 

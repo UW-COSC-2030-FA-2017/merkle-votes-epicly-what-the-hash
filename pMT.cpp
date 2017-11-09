@@ -1,3 +1,15 @@
+/*
+pMT.cpp
+Easton Tuttle
+Computer Science II
+Homework 5 - Merkle Votes
+November 8, 2017
+
+The definitions of the pMT class.
+*/
+
+#include "stdafx.h"
+#include "pMT.h"
 
 pMT::pMT(int hashSelect)
 /**
