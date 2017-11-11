@@ -7,6 +7,7 @@ November 8, 2017
 
 The interfaces for the binary tree.
 */
+
 #pragma once
 
 #include "stdafx.h"
@@ -15,9 +16,17 @@ using namespace std;
 
 class bTREE
 {
-    struct treeNode{
+	// Nodes of the tree which hold a pseudo-time stamp (integer, non-unique,)
+	// a 128-bit data component (string of 32 characters,)
+	// have 2 pointers to type node, and be differentiable
+	// if a leaf or not.
+    struct treeNode
+	{
+		int time;
         string data;
-        int time;
+		treeNode *firstPointer;
+		treeNode *secondPointer;
+		bool isLeaf = false;
     };
     
 private:

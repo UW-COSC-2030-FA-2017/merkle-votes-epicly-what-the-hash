@@ -7,6 +7,7 @@ November 8, 2017
 
 The testing program for the Merkle voting tree.
 */
+
 #include "stdafx.h"
 #include <stdio.h>
 #include "pMT.h"

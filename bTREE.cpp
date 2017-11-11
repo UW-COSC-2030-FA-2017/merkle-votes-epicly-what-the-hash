@@ -1,3 +1,13 @@
+/*
+bTREE.cpp
+Easton Tuttle
+Computer Science II
+Homework 5 - Merkle Votes
+November 8, 2017
+
+The definitions of the binary tree.
+*/
+
 #include "stdafx.h"
 #include "bTREE.h"
 
