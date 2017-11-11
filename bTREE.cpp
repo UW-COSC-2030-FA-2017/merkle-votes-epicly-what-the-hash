@@ -13,32 +13,25 @@ bTREE::~bTREE()
 
 int bTREE::dataInserted()
 {
+	return 0;
 }
 
 int bTREE::numberOfNodes()
 {
+	return 0;
 }
 
 int bTREE::insert(string data, int time)
 {
+	return 0;
 }
 
 int bTREE::find(string)
 {
+	return 0;
 }
 
-string bTREE::locate()
+string bTREE::locate(string find)
 {
-}
-
-friend bool bTREE::operator ==(const bTREE& lhs, const bTREE& rhs)
-{
-}
-
-friend bool bTREE::operator !=(const bTREE& lhs, const bTREE& rhs)
-{
-}
-
-friend std::ostream& bTREE::operator <<(std::ostream& out, const bTREE& p)
-{
+	return string();
 }
