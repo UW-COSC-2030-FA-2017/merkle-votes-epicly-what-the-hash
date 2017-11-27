@@ -13,8 +13,8 @@ The testing program for the Merkle voting tree.
 #include "pMT.h"
 using namespace std;
 
-int main(int argc, char **argv)
-{
-	printf("hello world\n");
-	return 0;
-}
+//int main(int argc, char **argv)
+//{
+//	printf("hello world\n");
+//	return 0;
+//}

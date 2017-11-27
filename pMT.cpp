@@ -1,6 +1,6 @@
 /*
 pMT.cpp
-Easton Tuttle
+Sam Blair, Oyedola Ajao, and Easton Tuttle
 Computer Science II
 Homework 5 - Merkle Votes
 November 8, 2017
