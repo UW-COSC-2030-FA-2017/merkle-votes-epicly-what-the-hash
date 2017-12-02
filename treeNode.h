@@ -3,7 +3,7 @@ treeNode.h
 Sam Blair, Oyedola Ajao, and Easton Tuttle
 Computer Science II
 Homework 5 - Merkle Votes
-November 8, 2017
+December 1, 2017
 
 The treeNode structure.
 */
@@ -11,7 +11,6 @@ The treeNode structure.
 #pragma once
 #ifndef TREENODE_H
 #define TREENODE_H
-#define NULL 0
 
 #include <string>
 
@@ -58,7 +57,7 @@ struct treeNode
 		right = NULL;
 		isLeaf = true;
 	}
-
+	//Mutator function to set data
 	void set_data(string new_data, int new_time, bool new_leaf)
 	{
 		data = new_data;

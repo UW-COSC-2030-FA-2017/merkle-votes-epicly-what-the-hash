@@ -61,18 +61,15 @@ int pMT::find(string vote, int time, int hashSelect)
  * @param hashSelect, an int corresponding to the hash functions _1, _2, and _3
  * @return 0 if not found, else number of opperations required to find the matching vote
  */
-	//私のアニメの木はどこにありますか？
 {
 	myMerkle.resetCount();
-
-	if (myMerkle.find(vote))
-	{
+	if (myMerkle.find(vote)){
 		return myMerkle.gotCount();
 	}
-	else
-	{
+	else{
 		return 0;
 	}
+	return 0;
 }
 
 int pMT::findHash(string mhash)
@@ -291,11 +288,9 @@ void pMT::locateData3(treeNode* subtree, string vote, string pathway)
 	}
 }
 
-
-
 /*
  * ---------------------------------------------------------------------------------------
- * Hashing Functions (Potatoes with bell peppers)
+ * Hashing Functions (Hashbrowns)
  * 
  * """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  * hash()
@@ -347,11 +342,6 @@ void pMT::hash(treeNode* subtree)
 
 void pMT::treeHash_SamG(treeNode* subtree)
 {
-	if (accessbTREE().getNode()->left == NULL && accessbTREE().getNode()->right ==  NULL)
-	{
-		//return hashingTree->data;
-	}
-
 	if(subtree->left != NULL && subtree->right != NULL)
 	{
 		treeHash_SamG(subtree->left);
@@ -361,11 +351,6 @@ void pMT::treeHash_SamG(treeNode* subtree)
 }
 void pMT::treeHash_Easton(treeNode* subtree)
 {
-	if (accessbTREE().getNode()->left == NULL && accessbTREE().getNode()->right == NULL)
-	{
-		//return hashingTree->data;
-	}
-
 	if (subtree->left != NULL && subtree->right != NULL)
 	{
 		treeHash_Easton(subtree->left);
@@ -375,11 +360,6 @@ void pMT::treeHash_Easton(treeNode* subtree)
 }
 void pMT::treeHash_SamB(treeNode* subtree)
 {
-	if (accessbTREE().getNode()->left == NULL && accessbTREE().getNode()->right == NULL)
-	{
-		//return hashingTree->data;
-	}
-
 	if (subtree->left != NULL && subtree->right != NULL)
 	{
 		treeHash_SamB(subtree->left);
@@ -389,11 +369,6 @@ void pMT::treeHash_SamB(treeNode* subtree)
 }
 void pMT::treeHash_Dola(treeNode* subtree)
 {
-	if (accessbTREE().getNode()->left == NULL && accessbTREE().getNode()->right == NULL)
-	{
-		//return hashingTree->data;
-	}
-
 	if (subtree->left != NULL && subtree->right != NULL)
 	{
 		treeHash_Dola(subtree->left);
@@ -403,11 +378,6 @@ void pMT::treeHash_Dola(treeNode* subtree)
 }
 
 string pMT::hash_SamB(string key)
-/**
- * @brief A function that takes in a key and returns a hash of that key using some custom function
- * @param key, a string
- * @return a hash of the key
- */
 //I used the ELF function from the previous lab.
 // The main choice for this one was for christmas spirit
 {
@@ -431,9 +401,7 @@ string pMT::hash_SamB(string key)
 
 string pMT::hash_SamG(string key)
 /**
- * @brief A function that takes in a key and returns a hash of that key using some custom function
- * @param key, a string
- * @return a hash of the key
+ * Wrote on own
  */
 {
 	int seed(78498);
@@ -448,9 +416,7 @@ string pMT::hash_SamG(string key)
 
 string pMT::hash_Dola(string key)
 /**
- * @brief A function that takes in a key and returns a hash of that key using some custom function
- * @param key, a string
- * @return a hash of the key
+ * Based on SDBM hash
  */
 {
 	    int hash = 0;
@@ -469,12 +435,8 @@ string pMT::hash_Dola(string key)
 
 string pMT::hash_Easton(string key)
 /*
-@brief A function that takes in a key and returns a hash of that key using some custom function
-@param key, a string
-@return a hash of the key
-
-Adaptation of the FNVHash to return a hash as a string data type.
-*/
+ *Adaptation of the FNVHash to return a hash as a string data type.
+ */
 {
 	   int prime = 0x811C9DC5;
 	   int hash = 0;
