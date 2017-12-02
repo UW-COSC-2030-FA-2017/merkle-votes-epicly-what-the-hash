@@ -1,57 +1,48 @@
 /*
 bTREE.h
-Sam Blair, Oyedola Ajao, and Easton Tuttle
+Sam Blair, Oyedola Ajao, Sam Goering, and Easton Tuttle
 Computer Science II
 Homework 5 - Merkle Votes
 November 8, 2017
-
-The interfaces for the binary tree.
+Interfaces of the bTREE class.
 */
 
 #pragma once
-
-#include "stdafx.h"
-#include "list.h"
 #include <string>
+#include "treeNode.h"
+
 using namespace std;
 
 class bTREE
 {
 private:
-	// Linked list used to hold the treeNodes together.
-	List tree;
+	treeNode* tree;
+	int count = 0;
+	int root = 0;
+	bool found = false;
+	bool equal = true;
+	string path;
 
-	// Any helper variables that may be needed.
-    
+	int insertH(treeNode* subtree, string data, int time);
+	void findH(treeNode* subtree, string data);
+	void locateH(treeNode* subtree, string data, string path);
+	void compareH(treeNode* comparisontree, treeNode* subtree);
+	int dataInsertedH(treeNode* subtree);
+	int numberOfNodesH(treeNode * subtree);
+
 public:
-    bTREE();
-    ~bTREE();
-    
-    int dataInserted();
-    int numberOfNodes();
-    
-    int insert(string, int);
-    
-    int find(string);
-    
-    string locate(string);
-    
-    
-    friend bool operator==(const bTREE& lhs, const bTREE& rhs);
-    friend bool operator!=(const bTREE& lhs, const bTREE& rhs);
-
-    friend std::ostream& operator<<(std::ostream& out, const bTREE& p);
-
-	friend bool operator ==(const bTREE& lhs, const bTREE& rhs)
-	{
-	}
-
-	friend bool operator !=(const bTREE& lhs, const bTREE& rhs)
-	{
-	}
-
-	friend std::ostream& operator <<(std::ostream& out, const bTREE& p)
-	{
-	}
-    
+	bTREE();
+	~bTREE();
+	int gotCount() { return count; }
+	void resetCount() { count = 0; }
+	int dataInserted();
+	int numberOfNodes();
+	bool compare(bTREE comparison);
+	bool insert(string data, int time);
+	bool find(string data);
+	string locate(string data);
+	treeNode* getNode() { return tree; }
+	void display(std::ostream& outfile);
+	void displayLeft(std::ostream & outfile, treeNode* subtree, std::string prefix);
+	void displayRight(std::ostream & outfile, treeNode* subtree, std::string prefix);
 };

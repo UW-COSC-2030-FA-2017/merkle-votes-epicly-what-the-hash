@@ -25,18 +25,18 @@ struct treeNode
 {
 	int time;
 	string data;
-	treeNode *nextNode;
-	treeNode *prevNode;
-	bool isLeaf = false;
+	treeNode *left;
+	treeNode *right;
+	bool isLeaf = true;
 
 	// Default constructor which sets all values to a "zero or null" state.
 	treeNode()
 	{
 		time = 0;
 		data = "";
-		nextNode = NULL;
-		prevNode = NULL;
-		isLeaf = false;
+		left = NULL;
+		right = NULL;
+		isLeaf = true;
 	}
 
 	// Constructor which sets the data to the paramater passed in.
@@ -44,9 +44,26 @@ struct treeNode
 	{
 		time = 0;
 		data = newData;
-		nextNode = NULL;
-		prevNode = NULL;
-		isLeaf = false;
+		left = NULL;
+		right = NULL;
+		isLeaf = true;
+	}
+
+	// Constructor which sets the data to the paramaters passed in.
+	treeNode(string newData, int newTime)
+	{
+		time = newTime;
+		data = newData;
+		left = NULL;
+		right = NULL;
+		isLeaf = true;
+	}
+
+	void set_data(string new_data, int new_time, bool new_leaf)
+	{
+		data = new_data;
+		time = new_time;
+		isLeaf = new_leaf;
 	}
 };
 
