@@ -19,48 +19,62 @@ using namespace std;
 int main(int argc, char **argv)
 {
 	// Test of pMT functions.
-	pMT merkleOne = pMT(2);
-	pMT loli =  pMT(1);
+	pMT merkleOne =  pMT(1);
+	pMT merkleTwo = pMT(2);
 
-	loli.insert("Test One", 3);
-	loli.insert("Test Two", 4);
-	loli.insert("Test Three", 1);
-	loli.insert("Test Four", 3);
-	loli.insert("Test Five", 11);
-	loli.accessbTREE().display(cout);
-	loli.hash(loli.accessbTREE().getNode());
-	loli.accessbTREE().display(cout);
+	// Insert five tree nodes into the merkleOne tree.
+	merkleOne.insert("Test One", 3);
+	merkleOne.insert("Test Two", 4);
+	merkleOne.insert("Test Three", 1);
+	merkleOne.insert("Test Four", 3);
+	merkleOne.insert("Test Five", 11);
 
-	if (loli.findHash("170564485") > 0)
+	// Display the tree before and after hashed.
+	cout << "Merkle One\n";
+	merkleOne.accessbTREE().display(cout);
+	merkleOne.hash(merkleOne.accessbTREE().getNode());
+	cout << "\n\nMerkle One\n";
+	merkleOne.accessbTREE().display(cout);
+	cout << "\n\nMerkle Two\n";
+	merkleTwo.accessbTREE().display(cout);
+	merkleTwo.hash(merkleTwo.accessbTREE().getNode());
+	cout << "\n\nMerkle Two\n";
+	merkleTwo.accessbTREE().display(cout);
+
+	// If findHash returns 1 or 0, print out found for 1 or not found for 0.
+	// Test findHash on a hash in the tree.
+	if (merkleOne.findHash("170564485") > 0)
 	{
-		cout << "it was found" << endl;
+		cout << "The hash has been found." << endl;
 	}
 	else
 	{
-		cout << "It was not found"<<endl;
+		cout << "The hash has not been found." << endl;
 	}
 	
-	if (loli.findHash("12900930") > 0)
+	// Test findHash on a hash in the tree.
+	if (merkleOne.findHash("12900930") > 0)
 	{
-		cout << "it was found" << endl;
+		cout << "The hash has been found." << endl;
 	}
 	else
 	{
-		cout << "It was not found" << endl;
+		cout << "The hash has not been found." << endl;
 	}
-	if (loli.findHash("t") > 0)
+
+	// Test findHash on a hash not in the tree.
+	if (merkleOne.findHash("t") > 0)
 	{
-		cout << "it was found" << endl;
+		cout << "The hash has been found." << endl;
 	}
 	else
 	{
-		cout << "It was not found" << endl;
+		cout << "The hash has not been found." << endl;
 	}
 
-	cout << "\n Number of operations to insert into a tree of five nodes: " << loli.insert("Operations", 100);
-	cout << "\n Number of operations to insert to an empty: " << merkleOne.insert("Operations", 56);
-
-	merkleOne.accessbTREE().display(cout);
+	// Insert returns the number of operations taken to insert into a tree.
+	cout << "\nNumber of operations to insert into a tree of five nodes: " << merkleOne.insert("Operations", 100);
+	cout << "\nNumber of operations to insert to an empty tree: " << merkleOne.insert("Operations", 56) << "\n";
 
 	// Beginning of vote.cpp tests.
 	ifstream voteFile;
