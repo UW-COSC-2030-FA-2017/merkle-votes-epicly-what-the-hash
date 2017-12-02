@@ -66,9 +66,11 @@ int main(int argc, char **argv)
 	ifstream voteFile;
 	string fileName;
 	string hashChoice;
+	string vote;
+	string time;
 	
 	// Get file name from the user.
-	cout << "Please enter the name of the voting file: \n";
+	cout << "Please enter the name of the voting file: ";
 	getline(cin, fileName);
 	voteFile.open(fileName);
 
@@ -93,7 +95,15 @@ int main(int argc, char **argv)
 	int intHashChoice = std::stoi(hashChoice);
 	pMT merkleTree = pMT(intHashChoice);
 
-
+	// While not at the end of the file, add each vote from the file (in the TIME:VOTE 
+	/*while (!voteFile.eof())
+	{
+		getline(voteFile, time);
+		int timeInt = std::stoi(time);
+		getline(voteFile, vote);
+		merkleTree.insert(vote, timeInt);
+		voteFile.close();
+	}*/
 
 	
 	return 0;
